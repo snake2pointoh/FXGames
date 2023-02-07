@@ -15,8 +15,8 @@ import minesweeper.Board;
  */
 public class Main extends Application
 {
-	public static double SCREEN_SIZE_X = 700;
-	public static double SCREEN_SIZE_Y = 700;
+	public static double SCREEN_SIZE_X = 1000;
+	public static double SCREEN_SIZE_Y = 1000;
 	
 	
 	@Override
