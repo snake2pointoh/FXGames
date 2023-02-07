@@ -215,9 +215,9 @@ public class Board extends Group
 		
 		clickedTile.clicked(event.getButton());
 		
-		//Lose Condition//
 		if(event.getButton() == MouseButton.PRIMARY) 
 		{
+			//Lose Condition//
 			if(clickedTile.getIsBomb()) 
 			{
 				gameState = GameState.Lose;
@@ -282,5 +282,10 @@ public class Board extends Group
 	public int getBombCount() 
 	{
 		return this.bombCount;
+	}
+	
+	public void setBombCount(int nBombs) 
+	{
+		// TODO
 	}
 }
