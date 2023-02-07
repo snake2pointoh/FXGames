@@ -216,18 +216,21 @@ public class Board extends Group
 		clickedTile.clicked(event.getButton());
 		
 		//Lose Condition//
-		if(clickedTile.getIsBomb() && event.getButton() == MouseButton.PRIMARY) 
+		if(event.getButton() == MouseButton.PRIMARY) 
 		{
-			gameState = GameState.Lose;
-			for (Tile obBomb : bombs)
+			if(clickedTile.getIsBomb()) 
 			{
-				obBomb.clicked(MouseButton.PRIMARY);
+				gameState = GameState.Lose;
+				for (Tile obBomb : bombs)
+				{
+					obBomb.clicked(MouseButton.PRIMARY);
+				}
 			}
-		}
-		else if(clickedTile.getTileValue() == TileValue.Zero && !clickedTile.getIsBomb())
-		{
-			int[] tilePos = getPositionOfTIle(clickedTile);
-			updateNeighbors(tilePos[0],tilePos[1]);
+			else if(clickedTile.getTileValue() == TileValue.Zero)
+			{
+				int[] tilePos = getPositionOfTIle(clickedTile);
+				updateNeighbors(tilePos[0],tilePos[1]);
+			}			
 		}
 	}
 	
