@@ -4,6 +4,11 @@ import javafx.scene.Group;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * This class Represent a MineSweeper Game board
+ * @author nick
+ *
+ */
 public class Board extends Group
 {
 	
@@ -42,6 +47,7 @@ public class Board extends Group
 		
 		//bind the events
 		this.setOnMouseClicked(event -> doClickEvent(event));
+//		this.setOnMouseClicked(this::doClickEvent);
 	}
 	
 	private void genNewRound(int nBombs)
@@ -213,6 +219,7 @@ public class Board extends Group
 			}
 		}		
 		
+		//send click event to clicked tile if the game is started
 		clickedTile.clicked(event.getButton());
 		
 		if(event.getButton() == MouseButton.PRIMARY) 
