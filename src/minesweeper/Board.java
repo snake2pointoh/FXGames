@@ -43,7 +43,7 @@ public class Board extends Group
 			}
 		}
 		
-		bombCount =  (int) (Math.ceil(tiles.length * tiles[0].length * BOMB_PERCENT)); // <--- TODO remove after testing //
+		bombCount = (int) (Math.ceil(tiles.length * tiles[0].length * BOMB_PERCENT)); // <--- TODO remove after testing //
 		
 		//bind the events
 		this.setOnMouseClicked(event -> doClickEvent(event));
@@ -52,7 +52,6 @@ public class Board extends Group
 	
 	private void genNewRound(int nBombs)
 	{
-		
 		if(nBombs >= tiles.length*tiles[0].length || nBombs == 0)
 		{
 			//sets number of bombs to default %10 of the tiles
@@ -213,6 +212,7 @@ public class Board extends Group
 				return;
 			}
 			genNewRound(bombCount);
+			//set first clicked tile to not be a bomb//
 			while(clickedTile.getIsBomb()) 
 			{
 				genNewRound(bombCount);

@@ -41,7 +41,7 @@ public class Main extends Application
 	public static void addTests(Group obGroup)
 	{	
 
-		Board testBoard = new Board(0, 0, SCREEN_SIZE_X, 10);
+		Board testBoard = new Board(0, 0, SCREEN_SIZE_X, 20);
 		obGroup.getChildren().add(testBoard);
 		
 	}
